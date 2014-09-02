@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="vote" namespace="/vote" extends="default">
+		<default-interceptor-ref name="myStack" />
+		
+		<action name="tj_vote" class="com.jitong.vote.action.TJVoteAction"	method="list">
+			<result name="success">/WEB-INF/jsp/vote/tj_votelist.jsp</result>
+			<result name="success_x">/WEB-INF/jsp/vote/tj_x_votelist.jsp</result>
+		</action>
+		
+		<action name="tj_voteinput" class="com.jitong.vote.action.TJVoteAction"  method="input">
+			<result name="success" type="redirectAction">tj_vote</result>
+			<result name="success_x">/WEB-INF/jsp/vote/tj_x_votelist.jsp</result>
+			<result name="input">/WEB-INF/jsp/vote/tj_voteform.jsp</result>
+		</action>
+		
+		<action name="tj_candidate" class="com.jitong.vote.action.TJCandidateAction" method="list">
+		<interceptor-ref name="myStack">             
+            <param name="fileUpload.maximumSize">223434555</param>  
+            <!-- 配置允许上传文件的类型,如果有多个类型用","隔开 -->  
+            <param name="fileUpload.allowedTypes">application/vnd.ms-excel,text/plain</param>  
+            <!--配置允许上传文件的扩展名,如果有多个用","隔开  -->  
+            <param name="fileUpload.allowedExtensions">txt,xls,ppt</param>  
+        </interceptor-ref>  
+		    <result name="import">/WEB-INF/jsp/vote/tj_importCandidateForm.jsp</result>
+			<result name="success">/WEB-INF/jsp/vote/tj_candidatelist.jsp</result>
+			<result name="candidatelist_2ndary">/WEB-INF/jsp/vote/tj_candidatelist_2ndary.jsp</result>
+		</action>
+		
+		<action name="tj_candidateinput" class="com.jitong.vote.action.TJCandidateAction"  method="input">
+			<!-- <result name="success" type="redirectAction">tj_candidate</result> -->
+			<result name="success">/WEB-INF/jsp/vote/tj_candidatelist.jsp</result>
+			<result name="input">/WEB-INF/jsp/vote/tj_candidateform.jsp</result>
+		</action>
+		
+		<action name="ps_vote" class="com.jitong.vote.action.PSVoteAction"	method="list">
+			<result name="success">/WEB-INF/jsp/vote/ps_votelist.jsp</result>
+			<result name="success_x">/WEB-INF/jsp/vote/ps_x_votelist.jsp</result>
+		</action>
+		
+		<action name="ps_voteinput" class="com.jitong.vote.action.PSVoteAction"  method="input">
+			<result name="success" type="redirectAction">ps_vote</result>
+			<result name="success_x">/WEB-INF/jsp/vote/ps_x_votelist.jsp</result>
+			<result name="input">/WEB-INF/jsp/vote/ps_voteform.jsp</result>
+		</action>
+		
+		<action name="ps_candidate" class="com.jitong.vote.action.PSCandidateAction" method="list">
+		<interceptor-ref name="myStack">             
+            <param name="fileUpload.maximumSize">223434555</param>  
+            <!-- 配置允许上传文件的类型,如果有多个类型用","隔开 -->  
+            <param name="fileUpload.allowedTypes">application/vnd.ms-excel,text/plain</param>  
+            <!--配置允许上传文件的扩展名,如果有多个用","隔开  -->  
+            <param name="fileUpload.allowedExtensions">txt,xls,ppt</param>  
+        </interceptor-ref>  
+		    <result name="import">/WEB-INF/jsp/vote/ps_importCandidateForm.jsp</result>
+			<result name="success">/WEB-INF/jsp/vote/ps_candidatelist.jsp</result>
+			<result name="candidatelist_2ndary">/WEB-INF/jsp/vote/ps_candidatelist_2ndary.jsp</result>
+		</action>
+		
+		<action name="ps_candidateinput" class="com.jitong.vote.action.PSCandidateAction"  method="input">
+			<!-- <result name="success" type="redirectAction">ps_candidate</result> -->
+			<result name="success">/WEB-INF/jsp/vote/ps_candidatelist.jsp</result>
+			<result name="input">/WEB-INF/jsp/vote/ps_candidateform.jsp</result>
+		</action>
+		
+		<action name="voter" class="com.jitong.vote.action.VoterAction" method="list">
+			<result name="success">/WEB-INF/jsp/vote/voterlist.jsp</result>
+		</action>
+		
+		<action name="popCandidateQuery" class="com.jitong.vote.action.PopCandidateQueryAction"	method="list">
+			<result name="success">/WEB-INF/jsp/vote/popCandidateQuery.jsp</result>
+		</action>
+	</package>
+</struts>

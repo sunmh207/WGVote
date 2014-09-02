@@ -1,0 +1,457 @@
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gbk">
+  <title>投票系统</title>
+  <link rel="stylesheet" href="css/redmond/jquery-ui-1.10.3.custom.css" />
+  <script src="js/jquery-1.9.1.js"></script>
+  <script src="js/jquery-ui-1.10.3.custom.js"></script>
+  <script src="js/monitoring.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/monitoring.css" />  
+</head>
+<body>
+ 
+<div id="tabs">
+  <ul>    
+    <li><a href="#tabs-1">推荐表决</a></li>
+	<li><a href="#tabs-2">评审表决</a></li>
+
+  </ul>
+  <div id="tabs-1">    
+  <br>
+  <div style="float: left; padding-bottom: 0px;">
+	&nbsp;投票名称 <input name="qryName" value='' size="20">
+	&nbsp;状态 <select name='status'>
+		<option value='10' ></option> 
+		<option value='10' >未开始</option> 
+		<option value='20' selected='selected'>投票中</option> 
+		<option value='35' >已结束</option> 				
+	</select> 
+	&nbsp;<button class="user-search">查询</button> &nbsp;<button class="ui_icon_circle_plus">新建</button>
+  </div>
+
+  <div id='Pagination' style='float:right;'>记录总数:<strong>510</strong>&nbsp;
+	<select name='pageSize' onchange='document.getElementById("searchForm").submit();'>
+		<option value='10' >10</option> 
+		<option value='20' selected='selected'>20</option> 
+		<option value='35' >35</option> 
+		<option value='50' >50</option> 
+		<option value='100'>100</option> 
+		
+	</select> 
+	项每页&nbsp;页码:<strong>1</strong>/<strong>326</strong>&nbsp;
+	
+		首页&nbsp;上一页		
+			<a href="javascript:goPage(2)">下一页</a>&nbsp;
+			<a href="javascript:goPage(326)">尾页</a>
+		
+	
+	<input type='text' id='_PageID' value='1' name="currentPage"
+		style='text-align:center;width:30px;font-size:12px;'>
+	<input type='button' id='goto' value='Go' onclick='document.getElementById("searchForm").submit();' class="button"/>
+	
+	<input name="excel" type="button" onClick="exportExcel()" class="button" value="xls">
+	
+</div>
+
+  <table width="100%" class="table" align="center" cellpadding="1" cellspacing="0" bgcolor="#FFFFFF">
+	<tr>
+		<td width="40" align="center" class="td_header">序号</td>
+		<td class="td_header">投票名称</td>
+		<td class="td_header">开始日期</td>
+		<td class="td_header">结束日期</td>		
+		<td class="td_header">要求</td>
+		<td class="td_header">投票说明</td>		
+		<td class="td_header">创建人</td>		
+		<td class="td_header">创建时间</td>
+		<td class="td_header">状态</td>
+		<td class="td_header" >操作</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">1</td>
+			<td align="left" class='td_body'>2014年度高级政工师推荐表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交，请勿重复提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>未开始</td>
+			<td class='td_body' align="center"> 
+				<button class="user-edit">编辑</button> 
+				<button class="ui_icon_person" onclick="location.href='candidate-tj.html'">候选人</button> 
+				<button class="setting-cancel">结束</button>
+				<button class="user-delete">删除</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">2</td>
+			<td align="left" class='td_body'>2014年度高级政工师推荐表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交，请勿重复提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>未开始</td>
+			<td class='td_body' align="center"> 
+				<button class="user-edit">编辑</button> 
+				<button class="ui_icon_person" onclick="location.href='candidate-tj.html'">候选人</button>  
+				<button class="setting-cancel">结束</button>
+				<button class="user-delete">删除</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">3</td>
+			<td align="left" class='td_body'>2014年度高级政工师推荐表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交，请勿重复提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>未开始</td>
+			<td class='td_body' align="center"> 
+				<button class="user-edit">编辑</button> 
+				<button class="ui_icon_person" onclick="location.href='candidate-tj.html'">候选人</button>  
+				<button class="setting-cancel">结束</button>
+				<button class="user-delete">删除</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">4</td>
+			<td align="left" class='td_body'>2014年度高级政工师推荐表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交，请勿重复提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>未开始</td>
+			<td class='td_body' align="center"> 
+				<button class="user-edit">编辑</button> 
+				<button class="ui_icon_person" onclick="location.href='candidate-tj.html'">候选人</button>  
+				<button class="setting-cancel">结束</button>
+				<button class="user-delete">删除</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">5</td>
+			<td align="left" class='td_body'>2014年度高级政工师推荐表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交，请勿重复提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>投票中</td>
+			<td class='td_body' align="center"> 
+				<button class="ui_icon_person" onclick="location.href='result.html'">统计显示</button> 
+				<button class="setting-cancel">结束</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">6</td>
+			<td align="left" class='td_body'>2014年度高级政工师推荐表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交，请勿重复提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>未开始</td>
+			<td class='td_body' align="center"> 
+				<button class="user-edit">编辑</button> 
+				<button class="ui_icon_person" onclick="location.href='candidate-tj.html'">候选人</button>  
+				<button class="setting-cancel">结束</button>
+				<button class="user-delete">删除</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">7</td>
+			<td align="left" class='td_body'>2014年度高级政工师推荐表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交，请勿重复提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>未开始</td>
+			<td class='td_body' align="center"> 
+				<button class="user-edit">编辑</button> 
+				<button class="ui_icon_person" onclick="location.href='candidate-tj.html'">候选人</button>  
+				<button class="setting-cancel">结束</button>
+				<button class="user-delete">删除</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">8</td>
+			<td align="left" class='td_body'>2014年度高级政工师推荐表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>结束</td>
+			<td class='td_body' align="center">
+				<button class="ui_icon_person" onclick="location.href='result.html'">统计显示</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">9</td>
+			<td align="left" class='td_body'>2014年度高级政工师推荐表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>	
+			<td align="left" class='td_body'>结束</td>
+			<td class='td_body' align="center">
+				<button class="ui_icon_person" onclick="location.href='result.html'">统计显示</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">10</td>
+			<td align="left" class='td_body'>2014年度高级政工师推荐表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>结束</td>
+			<td class='td_body' align="center">
+				<button class="ui_icon_person" onclick="location.href='result.html'">统计显示</button>
+			</td>
+	</tr>
+	</table>
+	
+  </div>
+  
+  
+  
+  <div id="tabs-2">
+    <br>
+  <div style="float: left; padding-bottom: 0px;">
+	&nbsp;投票名称 <input name="qryName" value='' size="20">
+	&nbsp;状态 <select name='status'>
+		<option value='10' ></option> 
+		<option value='10' >未开始</option> 
+		<option value='20' selected='selected'>投票中</option> 
+		<option value='35' >已结束</option> 				
+	</select> 
+	&nbsp;<button class="user-search">查询</button> &nbsp;<button class="user-search">新建</button>
+  </div>
+
+  <div id='Pagination' style='float:right;'>记录总数:<strong>510</strong>&nbsp;
+	<select name='pageSize' onchange='document.getElementById("searchForm").submit();'>
+		<option value='10' >10</option> 
+		<option value='20' selected='selected'>20</option> 
+		<option value='35' >35</option> 
+		<option value='50' >50</option> 
+		<option value='100'>100</option> 
+		
+	</select> 
+	项每页&nbsp;页码:<strong>1</strong>/<strong>326</strong>&nbsp;
+	
+		首页&nbsp;上一页		
+			<a href="javascript:goPage(2)">下一页</a>&nbsp;
+			<a href="javascript:goPage(326)">尾页</a>
+		
+	
+	<input type='text' id='_PageID' value='1' name="currentPage"
+		style='text-align:center;width:30px;font-size:12px;'>
+	<input type='button' id='goto' value='Go' onclick='document.getElementById("searchForm").submit();' class="button"/>
+	
+	<input name="excel" type="button" onClick="exportExcel()" class="button" value="xls">
+	
+</div>
+
+  <table width="100%" class="table" align="center" cellpadding="1" cellspacing="0" bgcolor="#FFFFFF">
+	<tr>
+		<td width="40" align="center" class="td_header">序号</td>
+		<td class="td_header">投票名称</td>
+		<td class="td_header">开始日期</td>
+		<td class="td_header">结束日期</td>		
+		<td class="td_header">要求</td>
+		<td class="td_header">投票说明</td>		
+		<td class="td_header">创建人</td>		
+		<td class="td_header">创建时间</td>
+		<td class="td_header">状态</td>
+		<td class="td_header" >操作</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">1</td>
+			<td align="left" class='td_body'>2014年度西安铁路局专业技术带头人候选人投票表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>未开始</td>
+			<td class='td_body' align="center"> 
+				<button class="user-edit">编辑</button> 
+				<button class="ui_icon_person" onclick="location.href='candidate-ps.html'">候选人</button>  
+				<button class="setting-cancel">结束</button>
+				<button class="user-delete">删除</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">2</td>
+			<td align="left" class='td_body'>2014年度西安铁路局专业技术带头人候选人投票表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>未开始</td>
+			<td class='td_body' align="center"> 
+				<button class="user-edit">编辑</button> 
+				<button class="ui_icon_person" onclick="location.href='candidate-ps.html'">候选人</button>  
+				<button class="setting-cancel">结束</button>
+				<button class="user-delete">删除</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">3</td>
+			<td align="left" class='td_body'>2014年度西安铁路局专业技术带头人候选人投票表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>未开始</td>
+			<td class='td_body' align="center"> 
+				<button class="user-edit">编辑</button> 
+				<button class="ui_icon_person" onclick="location.href='candidate-ps.html'">候选人</button>  
+				<button class="setting-cancel">结束</button>
+				<button class="user-delete">删除</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">4</td>
+			<td align="left" class='td_body'>2014年度西安铁路局专业技术带头人候选人投票表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>未开始</td>
+			<td class='td_body' align="center"> 
+				<button class="user-edit">编辑</button> 
+				<button class="ui_icon_person" onclick="location.href='candidate-ps.html'">候选人</button>  
+				<button class="setting-cancel">结束</button>
+				<button class="user-delete">删除</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">5</td>
+			<td align="left" class='td_body'>2014年度西安铁路局专业技术带头人候选人投票表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>未开始</td>
+			<td class='td_body' align="center"> 
+				<button class="user-edit">编辑</button> 
+				<button class="ui_icon_person" onclick="location.href='candidate-ps.html'">候选人</button>  
+				<button class="setting-cancel">结束</button>
+				<button class="user-delete">删除</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">6</td>
+			<td align="left" class='td_body'>2014年度西安铁路局专业技术带头人候选人投票表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>未开始</td>
+			<td class='td_body' align="center"> 
+				<button class="user-edit">编辑</button> 
+				<button class="ui_icon_person" onclick="location.href='candidate-ps.html'">候选人</button>  
+				<button class="setting-cancel">结束</button>
+				<button class="user-delete">删除</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">7</td>
+			<td align="left" class='td_body'>2014年度西安铁路局专业技术带头人候选人投票表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>未开始</td>
+			<td class='td_body' align="center"> 
+				<button class="user-edit">编辑</button> 
+				<button class="ui_icon_person" onclick="location.href='candidate-ps.html'">候选人</button>  
+				<button class="setting-cancel">结束</button>
+				<button class="user-delete">删除</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">8</td>
+			<td align="left" class='td_body'>2014年度西安铁路局专业技术带头人候选人投票表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>未开始</td>
+			<td class='td_body' align="center"> 
+				<button class="user-edit">编辑</button> 
+				<button class="ui_icon_person" onclick="location.href='candidate-ps.html'">候选人</button>  
+				<button class="setting-cancel">结束</button>
+				<button class="user-delete">删除</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">9</td>
+			<td align="left" class='td_body'>2014年度西安铁路局专业技术带头人候选人投票表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>结束</td>
+			<td class='td_body' align="center">
+				<button class="ui_icon_person" onclick="location.href='result.html'">统计显示</button>
+			</td>
+	</tr>
+	<tr>
+			<td align="center" class="td_header">10</td>
+			<td align="left" class='td_body'>2014年度西安铁路局专业技术带头人候选人投票表决表</td>
+			<td align="left" class='td_body'>2014-05-01</td>
+			<td align="left" class='td_body'>2014-05-15</td>			
+			<td align="left" class='td_body'>请务必在5月15日前提交。</td>
+			<td align="left" class='td_body'>在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+			<td align="left" class='td_body'>张三力</td>
+			<td align="left" class='td_body'>2014-04-05</td>			
+			<td align="left" class='td_body'>结束</td>
+			<td  class='td_body' align="center">
+				<button class="ui_icon_person" onclick="location.href='result.html'">统计显示</button>
+			</td>
+	</tr>
+	</table>
+
+  </div>
+  
+    
+</div>
+  
+</body>
+</html>

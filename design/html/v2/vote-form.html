@@ -1,0 +1,376 @@
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>投票系统</title>
+  <link rel="stylesheet" href="css/redmond/jquery-ui-1.10.3.custom.css" />
+  <script src="js/jquery-1.9.1.js"></script>
+  <script src="js/jquery-ui-1.10.3.custom.js"></script>
+  <script src="js/monitoring.js"></script>   
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/monitoring.css" />
+<style type="text/css">
+body,td,th {
+	text-align: left;
+	word-spacing: 100%;
+}
+#button .return {
+	text-align: right;
+}
+body {
+	background-color: #FFF;
+}
+#apDiv1 {
+	position:absolute;
+	width:100px;
+	height:24px;
+	z-index:1;
+	left: 30px;
+	top: 190px;
+}
+</style>
+<script type="text/javascript">
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+}
+</script>
+</head>
+<body>
+<div id="top"><img src="images/title.png" width="1283" height="113"></div>
+<div id="jieshao">
+  <table width="100%" border="1" class="table">
+    <tr>
+      <td class="td_header">投票名称 </td>
+      <td class="td_body">2014年度高级政工师推荐表决表</td>
+      <td align="left" class="td_header">创建人</td>
+      <td class="td_body">张三力</td>
+    </tr>
+    <tr>
+      <td align="left" class="td_header">开始日期 </td>
+      <td class="td_body">2014-05-01</td>
+      <td align="left" class="td_header">结束日期 </td>
+      <td class="td_body">2014-05-15
+        
+    </tr>
+    <tr>
+      <td align="left" class="td_header">要求 </td>
+      <td class="td_body" colspan="3">请务必在5月15日18:00前提交，请勿重复提交。</td>
+    </tr>
+    <tr>
+      <td align="left" class="td_header">投票说明 </td>
+      <td class="td_body" colspan="3">投票人在列表中的"投票表决"中相应打勾（同意、弃权、反对）</td>
+    </tr>
+  </table>
+</div>
+<div id="nexePage"><a href="#">
+  <input name="bSave" type="submit" id="bSave" onClick="MM_goToURL('parent','index.html');return document.MM_returnValue" value="保存提交">
+共有记录数 129条 ，已成功投票 5 票 当前第 1页 上一页</a> <a href="#">下一页</a></div>
+<div id="jieshao">
+  <div>
+    <table width="100%" class="table" align="center" cellpadding="1" cellspacing="0" bgcolor="#FFFFFF">
+      <tr>
+        <td align="center" class="td_header" rowspan="2">序号</td>
+        <td class="td_header" rowspan="2">姓名</td>
+        <td class="td_header" rowspan="2">单位</td>
+        <td class="td_header" rowspan="2">部门</td>
+        <td class="td_header" rowspan="2">毕业学校</td>
+        <td class="td_header" rowspan="2">所学专业</td>
+        <td class="td_header" rowspan="2">参评学历</td>
+        <td class="td_header" rowspan="2">专业工作年限</td>
+        <td class="td_header" colspan="4">投票表决</td>
+      </tr>
+      <tr>
+        <td class="td_header">二</td>
+        <td class="td_header">同意&radic;</td>
+        <td class="td_header">弃权○</td>
+        <td class="td_header">反对&times;</td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#999999" class="td_header">1</td>
+        <td align="left" bgcolor="#999999" class='td_body'>陈勇1</td>
+        <td align="left" bgcolor="#999999" class='td_body'>局运输处</td>
+        <td align="left" bgcolor="#999999" class='td_body'>施工组织科</td>
+        <td align="left" bgcolor="#999999" class='td_body'>西南交通大学</td>
+        <td align="left" bgcolor="#999999" class='td_body'>交通运输</td>
+        <td align="left" bgcolor="#999999" class='td_body'>大本</td>
+        <td align="left" bgcolor="#999999" class='td_body'>5年2个月</td>
+        <td align="center" bgcolor="#999999" class='td_body'>&nbsp;</td>
+        <td align="center" bgcolor="#999999" class='td_body'><input name="1" type="radio" checked></td>
+        <td align="center" bgcolor="#999999" class='td_body'><input type="radio" name="1"></td>
+        <td align="center" bgcolor="#999999" class='td_body'><input type="radio" name="1"></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#999999" class="td_header">2</td>
+        <td align="left" bgcolor="#999999" class='td_body'>陈勇2</td>
+        <td align="left" bgcolor="#999999" class='td_body'>局运输处</td>
+        <td align="left" bgcolor="#999999" class='td_body'>施工组织科</td>
+        <td align="left" bgcolor="#999999" class='td_body'>西南交通大学</td>
+        <td align="left" bgcolor="#999999" class='td_body'>交通运输</td>
+        <td align="left" bgcolor="#999999" class='td_body'>大本</td>
+        <td align="left" bgcolor="#999999" class='td_body'>5年2个月</td>
+        <td align="center" bgcolor="#999999" class='td_body'>&nbsp;</td>
+        <td align="center" bgcolor="#999999" class='td_body'><input name="2" type="radio" checked></td>
+        <td align="center" bgcolor="#999999" class='td_body'><input type="radio" name="2"></td>
+        <td align="center" bgcolor="#999999" class='td_body'><input type="radio" name="2"></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#999999" class="td_header">3</td>
+        <td align="left" bgcolor="#999999" class='td_body'>陈勇3</td>
+        <td align="left" bgcolor="#999999" class='td_body'>局运输处</td>
+        <td align="left" bgcolor="#999999" class='td_body'>施工组织科</td>
+        <td align="left" bgcolor="#999999" class='td_body'>西南交通大学</td>
+        <td align="left" bgcolor="#999999" class='td_body'>交通运输</td>
+        <td align="left" bgcolor="#999999" class='td_body'>大本</td>
+        <td align="left" bgcolor="#999999" class='td_body'>5年2个月</td>
+        <td align="center" bgcolor="#999999" class='td_body'>&nbsp;</td>
+        <td align="center" bgcolor="#999999" class='td_body'><input type="radio" name="3"></td>
+        <td align="center" bgcolor="#999999" class='td_body'><input type="radio" name="3"></td>
+        <td align="center" bgcolor="#999999" class='td_body'><input name="3" type="radio" checked></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#999999" class="td_header">4</td>
+        <td align="left" bgcolor="#999999" class='td_body'>陈勇4</td>
+        <td align="left" bgcolor="#999999" class='td_body'>局运输处</td>
+        <td align="left" bgcolor="#999999" class='td_body'>施工组织科</td>
+        <td align="left" bgcolor="#999999" class='td_body'>西南交通大学</td>
+        <td align="left" bgcolor="#999999" class='td_body'>交通运输</td>
+        <td align="left" bgcolor="#999999" class='td_body'>大本</td>
+        <td align="left" bgcolor="#999999" class='td_body'>5年2个月</td>
+        <td align="center" bgcolor="#999999" class='td_body'>&nbsp;</td>
+        <td align="center" bgcolor="#999999" class='td_body'><input name="4" type="radio" checked></td>
+        <td align="center" bgcolor="#999999" class='td_body'><input type="radio" name="4"></td>
+        <td align="center" bgcolor="#999999" class='td_body'><input type="radio" name="4"></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#999999" class="td_header">5</td>
+        <td align="left" bgcolor="#999999" class='td_body'>陈勇5</td>
+        <td align="left" bgcolor="#999999" class='td_body'>局运输处</td>
+        <td align="left" bgcolor="#999999" class='td_body'>施工组织科</td>
+        <td align="left" bgcolor="#999999" class='td_body'>西南交通大学</td>
+        <td align="left" bgcolor="#999999" class='td_body'>交通运输</td>
+        <td align="left" bgcolor="#999999" class='td_body'>大本</td>
+        <td align="left" bgcolor="#999999" class='td_body'>5年2个月</td>
+        <td align="center" bgcolor="#999999" class='td_body'>&nbsp;</td>
+        <td align="center" bgcolor="#999999" class='td_body'><input type="radio" name="5"></td>
+        <td align="center" bgcolor="#999999" class='td_body'><input type="radio" name="5"></td>
+        <td align="center" bgcolor="#999999" class='td_body'><input name="5" type="radio" checked></td>
+      </tr>
+      <tr>
+        <td align="center" class="td_header">6</td>
+        <td align="left" class='td_body'>陈勇6</td>
+        <td align="left" class='td_body'>局运输处</td>
+        <td align="left" class='td_body'>施工组织科</td>
+        <td align="left" class='td_body'>西南交通大学</td>
+        <td align="left" class='td_body'>交通运输</td>
+        <td align="left" class='td_body'>大本</td>
+        <td align="left" class='td_body'>5年2个月</td>
+        <td align="center" class='td_body'>&nbsp;</td>
+        <td align="center" class='td_body'><input type="radio" name="6"></td>
+        <td align="center" class='td_body'><input type="radio" name="6"></td>
+        <td align="center" class='td_body'><input type="radio" name="6"></td>
+      </tr>
+      <tr>
+        <td align="center" class="td_header">7</td>
+        <td align="left" class='td_body'>陈勇7</td>
+        <td align="left" class='td_body'>局运输处</td>
+        <td align="left" class='td_body'>施工组织科</td>
+        <td align="left" class='td_body'>西南交通大学</td>
+        <td align="left" class='td_body'>交通运输</td>
+        <td align="left" class='td_body'>大本</td>
+        <td align="left" class='td_body'>5年2个月</td>
+        <td align="center" class='td_body'>&nbsp;</td>
+        <td align="center" class='td_body'><input type="radio" name="7"></td>
+        <td align="center" class='td_body'><input type="radio" name="7"></td>
+        <td align="center" class='td_body'><input type="radio" name="7"></td>
+      </tr>
+      <tr>
+        <td align="center" class="td_header">8</td>
+        <td align="left" class='td_body'>陈勇8</td>
+        <td align="left" class='td_body'>局运输处</td>
+        <td align="left" class='td_body'>施工组织科</td>
+        <td align="left" class='td_body'>西南交通大学</td>
+        <td align="left" class='td_body'>交通运输</td>
+        <td align="left" class='td_body'>大本</td>
+        <td align="left" class='td_body'>5年2个月</td>
+        <td align="center" class='td_body'>&nbsp;</td>
+        <td align="center" class='td_body'><input type="radio" name="8"></td>
+        <td align="center" class='td_body'><input type="radio" name="8"></td>
+        <td align="center" class='td_body'><input type="radio" name="8"></td>
+      </tr>
+      <tr>
+        <td align="center" class="td_header">9</td>
+        <td align="left" class='td_body'>陈勇9</td>
+        <td align="left" class='td_body'>局运输处</td>
+        <td align="left" class='td_body'>施工组织科</td>
+        <td align="left" class='td_body'>西南交通大学</td>
+        <td align="left" class='td_body'>交通运输</td>
+        <td align="left" class='td_body'>大本</td>
+        <td align="left" class='td_body'>5年2个月</td>
+        <td align="center" class='td_body'>&nbsp;</td>
+        <td align="center" class='td_body'><input type="radio" name="5"></td>
+        <td align="center" class='td_body'><input type="radio" name="5"></td>
+        <td align="center" class='td_body'><input type="radio" name="5"></td>
+      </tr>
+      <tr>
+        <td align="center" class="td_header">10</td>
+        <td align="left" class='td_body'>陈勇10</td>
+        <td align="left" class='td_body'>局运输处</td>
+        <td align="left" class='td_body'>施工组织科</td>
+        <td align="left" class='td_body'>西南交通大学</td>
+        <td align="left" class='td_body'>交通运输</td>
+        <td align="left" class='td_body'>大本</td>
+        <td align="left" class='td_body'>5年2个月</td>
+        <td align="center" class='td_body'>&nbsp;</td>
+        <td align="center" class='td_body'><input type="radio" name="6"></td>
+        <td align="center" class='td_body'><input type="radio" name="6"></td>
+        <td align="center" class='td_body'><input type="radio" name="6"></td>
+      </tr>
+      <tr>
+        <td align="center" class="td_header">11</td>
+        <td align="left" class='td_body'>陈勇11</td>
+        <td align="left" class='td_body'>局运输处</td>
+        <td align="left" class='td_body'>施工组织科</td>
+        <td align="left" class='td_body'>西南交通大学</td>
+        <td align="left" class='td_body'>交通运输</td>
+        <td align="left" class='td_body'>大本</td>
+        <td align="left" class='td_body'>5年2个月</td>
+        <td align="center" class='td_body'>&nbsp;</td>
+        <td align="center" class='td_body'><input type="radio" name="7"></td>
+        <td align="center" class='td_body'><input type="radio" name="7"></td>
+        <td align="center" class='td_body'><input type="radio" name="7"></td>
+      </tr>
+      <tr>
+        <td align="center" class="td_header">12</td>
+        <td align="left" class='td_body'>陈勇8</td>
+        <td align="left" class='td_body'>局运输处</td>
+        <td align="left" class='td_body'>施工组织科</td>
+        <td align="left" class='td_body'>西南交通大学</td>
+        <td align="left" class='td_body'>交通运输</td>
+        <td align="left" class='td_body'>大本</td>
+        <td align="left" class='td_body'>5年2个月</td>
+        <td align="center" class='td_body'>&nbsp;</td>
+        <td align="center" class='td_body'><input type="radio" name="8"></td>
+        <td align="center" class='td_body'><input type="radio" name="8"></td>
+        <td align="center" class='td_body'><input type="radio" name="8"></td>
+      </tr>
+      <tr>
+        <td align="center" class="td_header">13</td>
+        <td align="left" class='td_body'>陈勇5</td>
+        <td align="left" class='td_body'>局运输处</td>
+        <td align="left" class='td_body'>施工组织科</td>
+        <td align="left" class='td_body'>西南交通大学</td>
+        <td align="left" class='td_body'>交通运输</td>
+        <td align="left" class='td_body'>大本</td>
+        <td align="left" class='td_body'>5年2个月</td>
+        <td align="center" class='td_body'>&nbsp;</td>
+        <td align="center" class='td_body'><input type="radio" name="5"></td>
+        <td align="center" class='td_body'><input type="radio" name="5"></td>
+        <td align="center" class='td_body'><input type="radio" name="5"></td>
+      </tr>
+      <tr>
+        <td align="center" class="td_header">14</td>
+        <td align="left" class='td_body'>陈勇6</td>
+        <td align="left" class='td_body'>局运输处</td>
+        <td align="left" class='td_body'>施工组织科</td>
+        <td align="left" class='td_body'>西南交通大学</td>
+        <td align="left" class='td_body'>交通运输</td>
+        <td align="left" class='td_body'>大本</td>
+        <td align="left" class='td_body'>5年2个月</td>
+        <td align="center" class='td_body'>&nbsp;</td>
+        <td align="center" class='td_body'><input type="radio" name="6"></td>
+        <td align="center" class='td_body'><input type="radio" name="6"></td>
+        <td align="center" class='td_body'><input type="radio" name="6"></td>
+      </tr>
+      <tr>
+        <td align="center" class="td_header">15</td>
+        <td align="left" class='td_body'>陈勇7</td>
+        <td align="left" class='td_body'>局运输处</td>
+        <td align="left" class='td_body'>施工组织科</td>
+        <td align="left" class='td_body'>西南交通大学</td>
+        <td align="left" class='td_body'>交通运输</td>
+        <td align="left" class='td_body'>大本</td>
+        <td align="left" class='td_body'>5年2个月</td>
+        <td align="center" class='td_body'>&nbsp;</td>
+        <td align="center" class='td_body'><input type="radio" name="7"></td>
+        <td align="center" class='td_body'><input type="radio" name="7"></td>
+        <td align="center" class='td_body'><input type="radio" name="7"></td>
+      </tr>
+      <tr>
+        <td align="center" class="td_header">16</td>
+        <td align="left" class='td_body'>陈勇8</td>
+        <td align="left" class='td_body'>局运输处</td>
+        <td align="left" class='td_body'>施工组织科</td>
+        <td align="left" class='td_body'>西南交通大学</td>
+        <td align="left" class='td_body'>交通运输</td>
+        <td align="left" class='td_body'>大本</td>
+        <td align="left" class='td_body'>5年2个月</td>
+        <td align="center" class='td_body'>&nbsp;</td>
+        <td align="center" class='td_body'><input type="radio" name="8"></td>
+        <td align="center" class='td_body'><input type="radio" name="8"></td>
+        <td align="center" class='td_body'><input type="radio" name="8"></td>
+      </tr>
+      <tr>
+        <td align="center" class="td_header">17</td>
+        <td align="left" class='td_body'>陈勇5</td>
+        <td align="left" class='td_body'>局运输处</td>
+        <td align="left" class='td_body'>施工组织科</td>
+        <td align="left" class='td_body'>西南交通大学</td>
+        <td align="left" class='td_body'>交通运输</td>
+        <td align="left" class='td_body'>大本</td>
+        <td align="left" class='td_body'>5年2个月</td>
+        <td align="center" class='td_body'>&nbsp;</td>
+        <td align="center" class='td_body'><input type="radio" name="5"></td>
+        <td align="center" class='td_body'><input type="radio" name="5"></td>
+        <td align="center" class='td_body'><input type="radio" name="5"></td>
+      </tr>
+      <tr>
+        <td align="center" class="td_header">18</td>
+        <td align="left" class='td_body'>陈勇6</td>
+        <td align="left" class='td_body'>局运输处</td>
+        <td align="left" class='td_body'>施工组织科</td>
+        <td align="left" class='td_body'>西南交通大学</td>
+        <td align="left" class='td_body'>交通运输</td>
+        <td align="left" class='td_body'>大本</td>
+        <td align="left" class='td_body'>5年2个月</td>
+        <td align="center" class='td_body'>&nbsp;</td>
+        <td align="center" class='td_body'><input type="radio" name="6"></td>
+        <td align="center" class='td_body'><input type="radio" name="6"></td>
+        <td align="center" class='td_body'><input type="radio" name="6"></td>
+      </tr>
+      <tr>
+        <td align="center" class="td_header">19</td>
+        <td align="left" class='td_body'>陈勇7</td>
+        <td align="left" class='td_body'>局运输处</td>
+        <td align="left" class='td_body'>施工组织科</td>
+        <td align="left" class='td_body'>西南交通大学</td>
+        <td align="left" class='td_body'>交通运输</td>
+        <td align="left" class='td_body'>大本</td>
+        <td align="left" class='td_body'>5年2个月</td>
+        <td align="center" class='td_body'>&nbsp;</td>
+        <td align="center" class='td_body'><input type="radio" name="7"></td>
+        <td align="center" class='td_body'><input type="radio" name="7"></td>
+        <td align="center" class='td_body'><input type="radio" name="7"></td>
+      </tr>
+      <tr>
+        <td align="center" class="td_header">20</td>
+        <td align="left" class='td_body'>陈勇8</td>
+        <td align="left" class='td_body'>局运输处</td>
+        <td align="left" class='td_body'>施工组织科</td>
+        <td align="left" class='td_body'>西南交通大学</td>
+        <td align="left" class='td_body'>交通运输</td>
+        <td align="left" class='td_body'>大本</td>
+        <td align="left" class='td_body'>5年2个月</td>
+        <td align="center" class='td_body'>&nbsp;</td>
+        <td align="center" class='td_body'><input type="radio" name="8"></td>
+        <td align="center" class='td_body'><input type="radio" name="8"></td>
+        <td align="center" class='td_body'><input type="radio" name="8"></td>
+      </tr>
+    </table>
+</div>
+</div>
+<div id="mid"></div>
+<div>提示信息</div>
+<div id="button"><br>
+</div>
+</body>
+</html>

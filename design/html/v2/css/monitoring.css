@@ -1,0 +1,10 @@
+.blue_boder_table {border: solid thin #729fcf; width:200px;}
+.blue_body_table {background-color: #729fcf; width:200px;}  
+.green_boder_table {border: solid thin #8ae234; width:200px;}
+.green_body_table {background-color: #8ae234; width:200px;}
+.red_boder_table {border: solid thin #ef2929; width:200px;}
+.red_body_table {background-color: #ef2929; width:200px;}
+.gray_boder_table {border: solid thin #C0C0C0; width:200px;}
+.gray_body_table {background-color: #C0C0C0; width:200px;}
+.yellow_boder_table {border: solid thin yellow; width:200px;}
+.yellow_body_table {background-color: yellow; width:200px;}

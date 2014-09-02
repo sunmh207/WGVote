@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+.zj01 {
+	text-align: center;
+}
+#apDiv1 {
+	position:absolute;
+	left:140px;
+	top:40px;
+	width:1020px;
+	height:520px;
+	layer-background-color:#6CF;
+	border:1px none #000000;
+	z-index:1;
+	background-image: url(images/login.jpg);
+	visibility: visible;
+}
+#apDiv2 {
+	position:absolute;
+	left:880px;
+	top:50px;
+	width:120px;
+	height:30px;
+	background-color:#6CF;
+	layer-background-color:#6CF;
+	border:1px none #000000;
+	z-index:2;
+}
+#adminLogin {
+	position:absolute;
+	width:110px;
+	height:20px;
+	layer-background-color:#6CF;
+	border:1px none #000000;
+	z-index:4;
+	left: 410px;
+	top: 100px;
+}
+#wait-time {
+	position:absolute;
+	width:390px;
+	height:30px;
+	z-index:3;
+	left: 480px;
+	top: 300px;
+}
+#apDiv3 {
+	position:absolute;
+	width:60px;
+	height:60px;
+	z-index:2;
+}
+#btnWait-in {
+	position:absolute;
+	width:60px;
+	height:60px;
+	z-index:3;
+	left: 670px;
+	top: 352px;
+}
+#wait {
+	position:absolute;
+	width:190px;
+	height:68px;
+	z-index:2;
+	left: 40px;
+	top: 22px;
+}
+#admin-login {
+	position:absolute;
+	width:120px;
+	height:20px;
+	z-index:3;
+	left: 840px;
+	top: -10px;
+}
+#wait-time {
+	position:absolute;
+	width:340px;
+	height:30px;
+	z-index:3;
+	left: 420px;
+	top: 272px;
+	font-weight: bold;
+}
+#btn-toupiao-in {
+	position:absolute;
+	width:200px;
+	height:60px;
+	z-index:3;
+	left: 560px;
+	top: 330px;
+}
+#login {
+	position:absolute;
+	width:190px;
+	height:50px;
+	z-index:3;
+	left: 40px;
+	top: 110px;
+	visibility: hidden;
+}
+#login-frame {
+	position:absolute;
+	width:350px;
+	height:140px;
+	z-index:4;
+	left: 440px;
+	top: 170px;
+	text-align: center;
+}
+.login {
+	position:absolute;
+	left:50px;
+	top:89px;
+	margin-left:230px;
+	margin-top:70px;
+}
+#return-wait {
+	position:absolute;
+	width:120px;
+	height:20px;
+	z-index:4;
+	left: 840px;
+	top: -80px;
+}
+</style>
+<script type="text/javascript">
+function MM_showHideLayers() { //v9.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) 
+  with (document) if (getElementById && ((obj=getElementById(args[i]))!=null)) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+}
+</script>
+</head>
+
+<body class="zj01">
+<div id="apDiv1">
+  <div id="wait">
+    <div id="admin-login"><a href="#" onclick="MM_showHideLayers('wait','','hide','login','','show')">后台管理员登陆</a></div>
+    <div id="wait-time">现在距离投票开始时间还有 02分23秒<br />
+      <a href="#">已准备好了，可以开始投票。</a> <br />
+    </div>
+    <div id="btn-toupiao-in"><a href="vote-form.html"><img src="images/startTouPiao.png" width="200" height="80" /></a></div>
+  </div>
+  <div id="login">
+    <div id="login-frame">
+      <table width="90%" height="130" border="0">
+        <tr>
+          <td colspan="3">请输入用户和密码，点&quot;用户登陆&quot;按钮</td>
+        </tr>
+        <tr>
+          <td width="23%">用户名</td>
+          <td width="49%"><form id="form1" name="form1" method="post" action="">
+            <label for="user"></label>
+            <input name="user" type="text" id="user" value="" size="20" />
+          </form></td>
+          <td width="28%">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>密 码</td>
+          <td><form id="form2" name="form2" method="post" action="">
+            <label for="bPassword"></label>
+            <input name="bPassword" type="password" id="bPassword" size="20" />
+          </form></td>
+          <td><form id="form3" name="form3" method="post" action="">
+            <input name="blogin" type="submit" id="blogin" onclick="MM_goToURL('parent','main.html');return document.MM_returnValue" value="用户登陆" />
+          </form></td>
+        </tr>
+      </table>
+    </div>
+    <div id="return-wait" onclick="MM_showHideLayers('wait','','show','login','','hide')"><a href="#">返回到等待页面</a></div>
+  </div>
+</div>
+<br />
+</body>
+</html>
