@@ -1,4 +1,4 @@
 WGVote
 ======
 
-A system for vote
+A system for anonymous voting. 
