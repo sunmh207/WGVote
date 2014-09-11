@@ -32,6 +32,7 @@ $(function () {
 
 <body>
 <s:actionerror/>
+
 <html:pagetitle title="投票页面" />
 <table width="100%" class="table" cellpadding="0" cellspacing="0" align="center">
  	<tr>
@@ -76,7 +77,9 @@ $(function () {
     </tr>  
 </table>
 <br>
-
+<div class="selected">
+  	<strong><s:property value="message"/></strong><br>
+</div>
 <form id="voteform" name="voteform" action="${root}/toupiao!submit.do" method="post">
 	<s:hidden name="vote.id"/>
 	<s:hidden name="voter.id"/>

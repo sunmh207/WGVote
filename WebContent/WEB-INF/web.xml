@@ -3,12 +3,8 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	id="WebApp_ID" version="2.5">
-	<display-name>WGVote</display-name>
-	
-	<!-- <filter>
-		<filter-name>action</filter-name>
-		 <filter-class>org.apache.struts2.dispatcher.FilterDispatcher </filter-class>
-	</filter> -->
+	<display-name>WGVoteSSH</display-name>
+
 	<filter>
         <filter-name>struts2</filter-name>
         <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
@@ -25,7 +21,7 @@
 
 	<servlet>
 		<servlet-name>cacheServlet</servlet-name>
-		<servlet-class>com.jitong.common.CacheServlet</servlet-class>
+		<servlet-class>com.stanley.common.CacheServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 

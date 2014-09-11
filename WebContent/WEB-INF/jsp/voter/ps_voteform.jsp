@@ -76,7 +76,9 @@ $(function () {
     </tr>  
 </table>
 <br>
-
+<div class="selected">
+  	<strong><s:property value="message"/></strong><br>
+</div>
 <form id="voteform" name="voteform" action="${root}/toupiao!submit.do" method="post">
 	<s:hidden name="vote.id"/>
 	<s:hidden name="voter.id"/>

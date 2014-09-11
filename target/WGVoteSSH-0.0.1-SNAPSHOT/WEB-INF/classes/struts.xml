@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.action.extension" value="do" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<constant name="struts.custom.i18n.resources" value="struts-messages"></constant>
+    <constant name="struts.multipart.maxSize" value="223434555" /> 
+    
+
+	<package name="default" namespace="/" extends="struts-default">
+		<interceptors>
+<!-- 			<interceptor name="auth" class="com.jitong.common.action.AuthInterceptor" />
+ -->			
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+				<!-- <interceptor-ref name="auth" /> -->
+				<interceptor-ref name="paramsPrepareParamsStack"/>
+			</interceptor-stack>
+			
+			<interceptor-stack name="myStackNoAuth">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="paramsPrepareParamsStack"/>
+			</interceptor-stack>
+			
+		</interceptors>
+
+
+		<global-results>
+			<result type="redirect" name="login">login.do</result>			
+			<result name="exportExcel">/WEB-INF/jsp/exportExcel.jsp</result>			
+		</global-results>
+
+
+		<!-- common actions -->
+		<!-- <action name="index">
+			<result type="redirectAction">
+				 <param name="actionName">toupiao</param>
+				<param name="namespace">/</param>
+			</result>
+		</action> -->
+				
+		<action name="admin" class="com.jitong.common.action.WelcomeAction">
+			<interceptor-ref name="myStack"></interceptor-ref>
+			<result>/WEB-INF/jsp/main.jsp</result>
+		</action>
+	
+		
+		
+	</package>
+<!-- 	<include file="vote.struts.xml"></include> -->
+</struts>
